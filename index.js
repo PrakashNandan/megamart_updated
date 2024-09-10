@@ -79,14 +79,14 @@ opts.secretOrKey = process.env.JWT_SECRET_KEY; // TODO: should not be in code;
 
 
 // Middlewares
-const corsOptions = {
-  origin: 'http://localhost:3000',  // Allow specific origin (your frontend)
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
-  credentials: true,                 // Allow credentials (cookies, authorization headers)
-};
+// const corsOptions = {
+//   origin: 'http://localhost:3000',  // Allow specific origin (your frontend)
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],  // Allowed methods
+//   credentials: true,                 // Allow credentials (cookies, authorization headers)
+// };
 
 // Apply CORS middleware
-server.use(cors(corsOptions));
+server.use(cors());
 server.use(express.static(path.resolve(__dirname,'build')));
 
 server.use(
